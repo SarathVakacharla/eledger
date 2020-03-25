@@ -1,6 +1,6 @@
 {% load static %}
 
-<div class="sidebar" data-image='{% static "img/sidebar-5.jpg" %}'>
+<div class="sidebar" data-image='{% static "img/sidebar-5.jpg" %}' data-color='green'>
     <!--
  Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
 
@@ -23,6 +23,12 @@
             -->
             <li>
                 <a class="nav-link" href="/">
+                    <i class="nc-icon nc-money-coins"></i>
+                    <p>Transactions</p>
+                </a>
+            </li>
+            <li>
+                <a class="nav-link" href="/farmcomp">
                     <i class="nc-icon nc-circle-09"></i>
                     <p>Farmers & Companies</p>
                 </a>
