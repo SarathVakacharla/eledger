@@ -1,0 +1,67 @@
+{% extends 'layout_base.html' %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card strpied-tabled-with-hover">
+            <div class="card-header ">
+                <h4 class="card-title">Farmers</h4>
+                <p class="card-category">Contact details</p>
+            </div>
+            <div class="card-body table-full-width table-responsive">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Location</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                    </thead>
+                    <tbody>
+                        {% for item in actors.farmers %}
+                        <tr>
+                            <td>{{ item.id }}</td>
+                            <td>{{ item.name }}</td>
+                            <td>{{ item.location }}</td>
+                            <td>{{ item.email }}</td>
+                            <td>{{ item.phone }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="card strpied-tabled-with-hover">
+            <div class="card-header ">
+                <h4 class="card-title">Companies</h4>
+                <p class="card-category">Contact details</p>
+            </div>
+            <div class="card-body table-full-width table-responsive">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Location</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                    </thead>
+                    <tbody>
+                        {% for item in actors.companies %}
+                        <tr>
+                            <td>{{ item.id }}</td>
+                            <td>{{ item.name }}</td>
+                            <td>{{ item.location }}</td>
+                            <td>{{ item.email }}</td>
+                            <td>{{ item.phone }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

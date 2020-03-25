@@ -13,7 +13,7 @@ def get_all_actors():
 	return actors
 
 def index(request):
-	return render(request, 'list.html', {'actors': get_all_actors()})
+	return render(request, 'farmers_companies.html', {'actors': get_all_actors()})
 
 def create_farmer(request):
 	#upload = CreateFarmer()
@@ -32,7 +32,7 @@ def create_farmer(request):
 				'message' : "Succesfully created farmer" #TODO: add farmer name
 			}
 		}
-		return render(request, 'list.html', context)
+		return render(request, 'farmers_companies.html', context)
 
 # TODO: update and delete farmers
 
@@ -53,6 +53,6 @@ def create_company(request):
 				'message' : "Succesfully created company" #TODO: add ompany name
 			}
 		}
-		return render(request, 'list.html', context)
+		return render(request, 'farmers_companies.html', context)
 
 # TODO: update and delete companies
