@@ -1,22 +1,29 @@
 from django import forms
 from .models import Farmer, Company, Transaction
+from django.forms import DateTimeInput
 
 class CreateFarmer(forms.ModelForm):
 
 	class Meta:
-		model: Farmer
+		model = Farmer
 		fields = '__all__'
 
 
 class CreateCompany(forms.ModelForm):
 
 	class Meta:
-		model: Company
+		model = Company
 		fields = '__all__'
 
+class MyDateInput(forms.DateTimeInput):
+	input_type = 'date'
 
-class CreateTransaction(forms.ModelForm):
-	date = forms.DateTimeField(widget = forms.DateField)
+class TransactionForm(forms.ModelForm):
+
 	class Meta:
-		model: Transaction
+		model = Transaction
 		fields = '__all__'
+		widgets = {
+			'date' : MyDateInput()
+		}
+

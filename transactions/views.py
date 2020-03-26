@@ -5,7 +5,7 @@ from django.urls import reverse_lazy
 from django.shortcuts import render, redirect
 
 from .models import Farmer, Company, Transaction
-from .forms import CreateFarmer, CreateCompany, CreateTransaction
+from .forms import TransactionForm
 
 ## Transactions ##
 def index(request):
@@ -19,12 +19,12 @@ class TransactionView(DetailView):
 
 class TransactionCreate(CreateView):
 	model = Transaction
-	fields = '__all__'
+	form_class = TransactionForm
 	success_url = reverse_lazy('transaction_list')
 
 class TransactionUpdate(UpdateView):
 	model = Transaction
-	fields = '__all__'
+	form_class = TransactionForm
 	success_url = reverse_lazy('transaction_list')
 
 class TransactionDelete(DeleteView):
