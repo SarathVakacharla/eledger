@@ -8,6 +8,7 @@ urlpatterns = [
 	path('txn/new/', views.TransactionCreate.as_view(), name='transaction_new'),
 	path('txn/view/<int:pk>', views.TransactionView.as_view(), name='transaction_view'),
 	path('txn/edit/<int:pk>', views.TransactionUpdate.as_view(), name='transaction_edit'),
+	path('txn/delete/<int:pk>', views.TransactionDelete.as_view(), name='transaction_delete'),
 
 	path('farmer/list/', views.farmers, name = 'farmer_list'),
 	path('farmer/new/', views.FarmerCreate.as_view(), name='farmer_new'),

@@ -27,6 +27,11 @@ class TransactionUpdate(UpdateView):
 	fields = '__all__'
 	success_url = reverse_lazy('transaction_list')
 
+class TransactionDelete(DeleteView):
+	model = Transaction
+	fields = '__all__'
+	success_url = reverse_lazy('transaction_list')
+
 def farmers(request):
 	return render(request, 'transactions/farmer_list.html', {'farmers': Farmer.objects.all()})
 

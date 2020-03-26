@@ -28,7 +28,18 @@ class Transaction(models.Model):
 	comment = models.TextField(blank = True)
 
 	def __str__(self):
-		return f"{self.name} - {self.location}"
+		return f"On {str(self.date)} - From '{self.farmer.name}' To '{self.company.name}'"
 
 	class Meta:
 		ordering = ['date']
+
+	def get_data(self):
+		return {
+			'Date' : self.date,
+			'Farmer' : self.farmer,
+			'Company' : self.company,
+			'Farmer price' : self.farmer_price,
+			'Company price' : self.company_price,
+			'Quantity' : self.quantity,
+			'Comment' : self.comment
+		}
